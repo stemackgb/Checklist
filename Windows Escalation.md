@@ -5,6 +5,23 @@ A complete Windows Escalation checklist once the initial Enumeration has been co
 This guide is written in a methodical step-by-step process, it is recommended not skipping steps.&nbsp;
 &nbsp;
 
+**Metasploit Scripts**
+
+*Several Metasploit modules to detect potential privilege escalation routes*
+```Windows
+multi/recon/local_exploit_suggester
+```
+```Windows
+windows/local/service_permissions
+```
+```Windows
+windows/local/bypass_uac
+```
+```Windows
+post/windows/gather_enum_unattend
+```
+&nbsp;
+
 **Check for scheduled tasks**
 
 *Query to display all scheduled tasks*
